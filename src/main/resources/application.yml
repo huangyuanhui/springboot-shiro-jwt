@@ -1,0 +1,16 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: my-shiro
+#指定数据库相关信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/shiro-end-starter?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath*:com.cmdc.domain.mapper/*.xml
+  type-aliases-package: com.cmdc.domain.entity
+  configuration:
+    map-underscore-to-camel-case: true
