@@ -32,7 +32,6 @@ public class ShiroConfig {
 
 
     /**
-     * 密码登录时指定匹配器，暂时不弄
      * @return HashedCredentialsMatcher
      */
      @Bean("hashedCredentialsMatcher")

@@ -8,6 +8,7 @@ import com.cmdc.interfaces.dto.request.CodeLoginDTO;
 import com.cmdc.interfaces.dto.request.PassWordLoginDTO;
 import com.cmdc.interfaces.dto.request.RegisterDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -57,7 +58,10 @@ public class UserFacade {
             throw e;
         }catch (Exception e){
             log.info("错误信息:{}",e);
-            jsonResult=new JsonResult<>(ErrorEnum.SERVER_ERROR);
+            if(e instanceof IncorrectCredentialsException){
+                throw e;
+            }
+            throw new CmdcException(ErrorEnum.SERVER_ERROR);
         }
         return jsonResult;
     }
@@ -90,7 +94,7 @@ public class UserFacade {
             throw e;
         }catch (Exception e){ //如果不是我们期待的异常,返回服务器错误就好
             log.info("错误信息",e);
-            jsonResult=new JsonResult<>(ErrorEnum.SERVER_ERROR);
+            throw new CmdcException(ErrorEnum.SERVER_ERROR);
         }
         return jsonResult;
     }
@@ -104,7 +108,7 @@ public class UserFacade {
             throw e;
         }catch (Exception e){
             log.info("异常:{}",e);
-            jsonResult=new JsonResult<>(ErrorEnum.SERVER_ERROR);
+            throw new CmdcException(ErrorEnum.SERVER_ERROR);
         }
         return jsonResult;
     }

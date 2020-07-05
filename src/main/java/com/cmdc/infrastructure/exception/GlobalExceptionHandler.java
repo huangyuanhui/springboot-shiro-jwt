@@ -4,6 +4,7 @@ package com.cmdc.infrastructure.exception;
 import com.cmdc.interfaces.dto.JsonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authz.AuthorizationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,6 +51,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler
     @ResponseBody
     public JsonResult ErrorHandler(AuthenticationException e) {
+        log.error("用户名或密码错误,用户登录失败！", e);
+        return new JsonResult<>(ErrorEnum.ERROR_ACCOUNT.getCode(),ErrorEnum.ERROR_ACCOUNT.getMsg());
+    }
+
+    @ExceptionHandler
+    @ResponseBody
+    public JsonResult ErrorHandler(IncorrectCredentialsException e) {
         log.error("用户名或密码错误,用户登录失败！", e);
         return new JsonResult<>(ErrorEnum.ERROR_ACCOUNT.getCode(),ErrorEnum.ERROR_ACCOUNT.getMsg());
     }
