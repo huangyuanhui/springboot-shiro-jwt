@@ -4,20 +4,20 @@
 springboot整合shiro和jwt
 
 #### 软件架构
-软件架构说明
+springboot整合shiro和jwt,实现前后端分离
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  导入sql文件夹下的shiro.sql
+2.  更改application.yml中的数据库配置，换为自己的
+3.  启动项目不报错即可
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  先执行密码登录或者验证码登录拿到token
+2.  将token放在请求头中，测试权限即可
+
 
 #### 参与贡献
 
