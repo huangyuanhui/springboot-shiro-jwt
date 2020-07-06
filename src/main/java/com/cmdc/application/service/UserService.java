@@ -1,6 +1,5 @@
 package com.cmdc.application.service;
 
-import com.cmdc.interfaces.dto.JsonResult;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -10,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 public interface UserService {
     String passWordLogin(String userId,String passWord);
-    @Transactional
+
     void register( String userId, String userName,String password, String remark);
 
     void sendVerificationCode(String userId);
