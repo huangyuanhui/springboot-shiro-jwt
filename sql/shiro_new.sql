@@ -72,11 +72,11 @@ CREATE TABLE `sys_user` (
   `password` varchar(255) DEFAULT NULL COMMENT '用户登录密码',
   `userRemarks` varchar(255) DEFAULT NULL COMMENT '备注，预留字段',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `sys_user` */
 
-insert  into `sys_user`(`id`,`userId`,`userName`,`password`,`userRemarks`) values (1,'10001','adminHong','202cb962ac59075b964b07152d234b70','小红'),(2,'15564819717','2','f10bfea990b657f6e8355c6e3ee67e2d','hehe'),(3,'177900','武文生','c4dbde004d409a733e4a7c8b00466613','生生酱'),(4,'20001','jc','e165421110ba03099a1c0393373c5b43','JC'),(5,'18864819717','myDear','756b3c2e758a2b8c728fa2e4d3f3294d','nice today i love you'),(8,'18262699169','hello','4cad6da13952ad1621e4f8ede54d9fad','hello'),(9,'15698756214','good luck','713741121ec6b5d854b9c15e78a36f27','good luck');
+insert  into `sys_user`(`id`,`userId`,`userName`,`password`,`userRemarks`) values (1,'10001','adminHong','202cb962ac59075b964b07152d234b70','小红'),(2,'15564819717','2','f10bfea990b657f6e8355c6e3ee67e2d','hehe'),(3,'177900','武文生','c4dbde004d409a733e4a7c8b00466613','生生酱'),(4,'20001','jc','e165421110ba03099a1c0393373c5b43','JC'),(5,'18864819717','myDear','756b3c2e758a2b8c728fa2e4d3f3294d','nice today i love you'),(8,'18262699169','hello','4cad6da13952ad1621e4f8ede54d9fad','hello'),(9,'15698756214','good luck','713741121ec6b5d854b9c15e78a36f27','good luck'),(10,'12345678922','测试一下','a753bbccb874ef05b43b9fceffb949dd','闲来无聊');
 
 /*Table structure for table `user_role` */
 
@@ -87,11 +87,11 @@ CREATE TABLE `user_role` (
   `userId` varchar(255) DEFAULT NULL COMMENT '帐号表的主键id',
   `roleId` varchar(32) DEFAULT NULL COMMENT '角色表的主键id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `user_role` */
 
-insert  into `user_role`(`id`,`userId`,`roleId`) values (1,'10001','100'),(2,'20001','200'),(3,'177900','200'),(4,'15564819717','200'),(5,'18864819717','200'),(8,'18262699169','200'),(9,'15698756214','200');
+insert  into `user_role`(`id`,`userId`,`roleId`) values (1,'10001','100'),(2,'20001','200'),(3,'177900','200'),(4,'15564819717','200'),(5,'18864819717','200'),(8,'18262699169','200'),(9,'15698756214','200'),(10,'12345678922','200');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
